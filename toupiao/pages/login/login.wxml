@@ -1,0 +1,51 @@
+<!--pages/login.wxml-->
+<view class="page-login" >
+    <view class="logo" >
+      <image class="" src="../../icon/logo.jpg"  lazy-load="false" binderror="" bindload="" />
+    </view>
+    <view class="srk">
+      <input type="number" placeholder="请输入您的手机号" value="{{form.phone}}"   maxlength="11" bindinput ="phnoeInput"  />  
+      <view style='border:2rpx solid #CCCCCC;height:96rpx;border-radius:10rpx;'>
+        <input class="hqyzm-input" value="{{form.code}}" type="digit"  placeholder="请输入验证码" maxlength="6"   bindinput="codeInput" ></input>
+      </view>
+      <view class="hqyzm" bindtap='hqyzm' wx:if='{{codetime==30}}'>获取验证码</view> 
+      <view class="hqyzm" wx:else>剩余{{codetime}}秒</view> 
+      
+      <!-- <input class="xzxq-input" value="" type="text" placeholder="请选择您所在的小区" disabled maxlength="20"  >
+          <image class="xzxq" src='../../icon/icon_jiantou.svg' style='width:48rpx;height: 48rpx;'></image>
+      </input> -->
+
+      <view class='list-msg'>
+        
+      <!--下拉框  -->
+       <picker bindchange="mySelect" value="{{selectindex}}" range="{{selectcontent}}" mode='selector' range-key='name'>
+          <view class='list-msg2'>
+              <text>{{selectindex===''?'请选择登陆小区':selectcontent[selectindex].name}}</text>
+              <image style='height:20rpx;width:20rpx;' src=''></image>
+          </view>
+        </picker>
+      <!-- 下拉需要显示的列表 -->
+          <!-- <view class="select_box" wx:if="{{select}}">
+            <view class="select_one" wx:for="{{selectcontent}}" bindtap="mySelect" data-id="{{item.id}}" data-name="{{item.name}}" >{{item.name}}</view>
+          </view> -->
+      </view>
+
+      <button bindtap="loginBtnClick">
+        <text>登录</text> 
+      </button>
+
+      <!-- 登录提示 -->
+      <view class="modal-mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}">
+        <view class="modal-dialog" wx:if="{{showModal}}">
+            <view class="modal-title">登录提示</view>
+            <view class="modal-title2">当前登录用户未在平台认证</view>
+            <button class="ljrz" bindtap="CertificationImmediately">
+              立即认证  
+            </button>
+        </view>
+        <view class="btn-cancel" bindtap="hideModal">
+                <image src="../../icon/icon_close.svg" />
+            </view>
+      </view>
+    </view>
+</view>

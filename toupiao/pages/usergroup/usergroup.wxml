@@ -1,0 +1,53 @@
+<!--pages/usergroup/usergroup.wxml-->
+<view class='page-usergroup'>
+  <view class='housemessage'>
+    <view class='housemessage-fzxx'>
+      <image src='../../icon/icon_fangzi.svg' style='width:38rpx;height:38rpx;'></image>
+      <text>房主信息</text>
+    </view>
+    <view class='housemessage-content'>
+      <view class='housemessage-name'><text>姓名：</text> {{hu_info.name}}</view>
+      <view class='housemessage-number'><text>联系方式：</text> {{hu_info.phone}}</view>
+      <view class='housemessage-house'><text>当前房屋：</text> {{hu_info.address}}</view>
+    </view>
+  </view>
+  <view class='usergroup'>
+    <view class='usergroup-text'>
+      <text>成员组</text>
+      <image src='../../icon/icon_plus.svg' style='width:44rpx;height:44rpx;' bindtap="showDialogBtn" wx:if='{{type==1}}'></image>
+    </view>
+  </view>
+  <!-- 成员组 -->
+  <scroll-view scroll-y class='scrollview'>
+    <view wx:if='{{house_user.length == 0}}' class='nodata'>暂无成员</view>
+    <view class='usergroup-content' wx:for='{{house_user}}'>
+      <view class='usergroup-content-top'>
+        <view class='usergroup-content-top-name'><image src='../../icon/icon_chengyuan.svg'></image><text>{{item.name}}</text></view>
+        <view class='usergroup-content-top-tc' bindtap="delectmember" data-id='{{item.id}}' wx:if='{{type==1}}'>
+          <image src='../../icon/icon_ti.svg'></image>
+          <text>踢除</text>
+        </view>
+      </view>
+      <view class='usergroup-content-bottom'>
+        <view class='usergroup-content-bottom-phone'><image src='../../icon/icon_shouji.svg'></image><text>{{item.phone}}</text></view>
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 添加成员组 -->
+  <view class="modal-mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+    <view class="modal-dialog" wx:if="{{showModal}}">
+    <view class="modal-title">添加成员</view>
+    <view class="modal-input">
+      <input placeholder-class="input-holder" value='{{name}}' type="text" maxlength="10" class="input" placeholder="成员姓名" bindinput="nameval"></input>
+    </view>
+    <view class="modal-input">
+      <input placeholder-class="input-holder" value='{{phone}}' type="number" maxlength="11"  class="input" placeholder="成员手机号" bindinput="phoneval"></input>
+    </view>
+
+    <view class="modal-footer">
+      <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+      <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+    </view>
+
+  </view>
+</view>

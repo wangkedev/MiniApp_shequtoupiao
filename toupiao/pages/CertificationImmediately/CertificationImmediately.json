@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+
+  },
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "业主认证",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light"
+
+  
+}

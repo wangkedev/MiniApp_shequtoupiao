@@ -1,0 +1,89 @@
+/* pages/selectionDetails/selectionDetails.wxss */
+.page-selectionDetails{
+  display: flex;
+  flex-direction: column;
+
+}
+.selectionDetails-img{
+  margin: 1.5% 3.7% 3% 3.7%;
+}
+.selectionDetails-img image{
+  width: 694rpx;
+  height: 810rpx;
+  border-radius: 20rpx;
+  background: black;
+}
+.selectionDetails-text{
+  margin-left: 3.7%;
+  display: flex;
+  flex-direction: column;
+}
+.selectionDetails-text .selectionDetails-text1{
+  font-family: PingFang-SC-Bold;
+  font-size: 28rpx;
+  color: #333333;
+  letter-spacing: 0;
+  text-align: justify;
+  line-height: 40rpx;
+}
+.selectionDetails-text .selectionDetails-text2{
+  font-family: PingFangSC-Regular;
+  font-size: 38rpx;
+  color: #666666;
+  letter-spacing: 0;
+  text-align: justify;
+  margin-top: 2.1%;
+}
+.selectionDetails-messages{
+  display: flex;
+  padding: 28rpx ;
+  box-sizing: border-box;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.selectionDetails-messages text{
+  font-family: PingFangSC-Regular;
+  font-size: 28px;
+  color: #151515;
+  letter-spacing: 0;
+  line-height: 20rpx;
+  height: 20rpx;
+  }
+.selectionDetails-messages .selectionDetails-messages-lf{
+  display: flex;
+  flex-direction: column;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #999999;
+  letter-spacing: 0;
+  line-height: 40rpx;
+  text-align: right;
+
+}
+.selectionDetails-messages .selectionDetails-messages-rt{
+  display: flex;
+  flex-direction: column;
+  margin-left:220rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #999999;
+  letter-spacing: 0;
+  line-height: 40rpx;
+  text-align: right;
+
+}
+.half{
+  width: 49%;
+  font-size: 14px;
+  line-height: 20px;
+  display: flex;
+}
+.name{
+  width: 140rpx;
+  color: #151515;
+}
+.val{
+  flex: 1;
+  color: #151515;
+  height: auto;
+}

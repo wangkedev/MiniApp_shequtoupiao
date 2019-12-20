@@ -1,0 +1,43 @@
+<!--pages/notice.wxml-->
+<!-- 通知 -->
+<wxs module="utils" src="../../utils/utils.wxs"/>
+<view class="page-notice" >
+  <view class="">
+    <image class="" src="{{image}}"  lazy-load="false" binderror="" bindload="" style="width:750rpx;height:422rpx;background:black" />
+      
+  </view>
+  <view class="notice-title" >
+    {{title}}
+  </view>
+  <view class="notice-title-detail" >
+    <text class="notice-title-detail-date" >{{utils.formatTime(issue_time)}}</text>
+    <view >
+       <text class="notice-title-detail-fbdw" >发布单位：</text><text class="notice-title-detail-dq" >{{initiator}}</text>
+    </view>
+  </view>
+  
+  <view class="notice-content" >
+    <rich-text nodes='{{details}}'></rich-text>
+    <!-- <text class="" >
+      物业管理费有两种，一种是包干制，就是算定一个标准后不管盈亏都由物业公司负责，一种是酬金制，有点像管家式管理，物业公司只收取一点比例的酬金，其他费用多少都由业主负担。
+      一般情况下的物业管理费都是包干制。
+      不同类型的房产的物业费的核算项目和要求也是不同的，一般经济适用房是政府指导价，可查看相关文件进行核算。商品房和别墅、商场、写字楼都要根据现实情况进行核算。
+      不过有个基本的项目，可参照国家《物业服务收费管理办法》。
+    </text>
+    <image class="" src="" lazy-load="false" binderror="" bindload="" style="width:694rpx;height:388rpx;background:black">
+      
+    </image>
+    <text class="" >
+        物业服务成本或者物业服务支出构成一般包括以下部分：
+        1、管理服务人员的工资、社会保险和按规定提取的福利费等;
+        2、物业共用部位、共用设施设备的日常运行、维护费用;
+        3、物业管理区域清洁卫生费用;
+        4、物业管理区域绿化养护费用;
+        5、物业管理区域秩序维护费用;
+        6、办公费用;
+        7、物业管理企业固定资产折旧;
+        8、物业共用部位、共用设施设备及公众责任保险费用;　　
+        9、经业主同意的其它费用。
+    </text> -->
+  </view>
+</view>

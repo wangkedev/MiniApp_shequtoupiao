@@ -1,0 +1,153 @@
+/* pages/mine/mine.wxss */
+.page-mine{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.mine{
+  padding:40rpx 28rpx 60rpx;
+  box-sizing: border-box;
+}
+.mine .mine-content{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.mine .mine-message{
+  height: 108rpx;
+  margin-left: 28rpx;
+  flex: 1;
+}
+.flex{
+  display: flex;
+  align-items: center;
+}
+.loginout{
+  margin-left:80rpx;
+  color:red;
+}
+.mine .mine-message-top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom:20rpx;
+}
+.mine .mine-message-top .mine-message-top-name{
+  font-family: PingFang-SC-Bold;
+  font-size: 36rpx;
+  color: #333333;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 50rpx;
+  margin-right:5%;
+
+}
+.mine .mine-message-top .mine-message-top-phone{
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #333333;
+  letter-spacing: 0;
+  line-height: 40rpx;
+  margin-left: 2.6%;
+}
+
+.mine .mine-message-bottom{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.mine .mine-message-bottom .mine-message-bottom-fc{
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #999999;
+  letter-spacing: 0;
+  line-height: 40prx;
+}
+.mine .mine-message-bottom .mine-message-bottom-fcxx{
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #151515;
+  letter-spacing: 0;
+  line-height: 24rpx;
+}
+.scrollview{
+  height: calc(100vh - 330rpx);
+}
+.participation{
+  width: 100%;
+  height: 88rpx;
+  margin-top:4.5%;
+  background: #FAFAFA;  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.participation text{
+  font-family: PingFang-SC-Bold;
+  font-size: 28rpx;
+  color: #333333;
+  letter-spacing: 0;
+  text-align: justify;
+  line-height: 40rpx;
+  padding-left: 3.7%;
+}
+.participation image{
+  padding-right: 3.3%
+}
+.participation-content{
+  padding: 6% 3.7% 6% 3.7%;
+  display: flex;
+  flex-direction: row;
+  background: #FFFFFF;
+  border-bottom: 1rpx solid #EBEBEB;
+}
+.participation-content .participation-content-state{
+  background: #F52C2C;
+  border-radius: 8rpx 2rpx 8rpx 2rpx;
+  width: 76rpx;
+  height: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.participation-content .participation-content-state text{
+  font-family: PingFangSC-Regular;
+  font-size: 20rpx;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: justify;
+}
+.participation-content .participation-content-state-text{
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #333333;
+  letter-spacing: 0;
+  text-align: justify;
+  line-height: 40rpx;
+  width: 578rpx;
+  margin-left: 5.3%;  
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical; 
+  -webkit-line-clamp:2; 
+}
+.participation-content .participation-content-state-text .text1{
+  display: block;
+  font-family: PingFangSC-Regular;
+  font-size: 20rpx;
+  color: #999999;
+  letter-spacing: 0;
+  text-align: justify;
+  line-height: 28rpx;
+  margin-top: 3%;
+}
+.nodata{
+  padding-top: 100rpx;
+  text-align: center;
+  font-size: 40rpx;
+}

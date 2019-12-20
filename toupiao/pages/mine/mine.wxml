@@ -1,0 +1,41 @@
+<!--pages/mine/mine.wxml-->
+<!-- 我的 -->
+<wxs module="utils" src="../../utils/utils.wxs"/>
+<view class='page-mine'>
+  <view class='mine'>
+    <view class='mine-content'>
+      <view style='width:108rpx;height:108rpx; border-radius:50%;overflow:hidden;'>
+        <open-data type="userAvatarUrl" style='width:108rpx;height:108rpx;'></open-data>
+      </view>
+      <view class='mine-message'>
+        <view class='mine-message-top'>
+          <text class='mine-message-top-name'>{{head.u_name}}</text>
+          <view class='flex'>
+           <image src='../../icon/icon_shouji.svg' style='width:32rpx;height:32rpx;'></image>
+            <text class='mine-message-top-phone'>{{head.phone}}</text>
+          </view>
+          <view class='loginout' bindtap='loginout'>退出</view>
+        </view>
+        <view class='mine-message-bottom'>
+          <text class='mine-message-bottom-fc'>房产：</text>
+          <text class='mine-message-bottom-fcxx'>{{head.estate_name}}，{{head.address}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='participation'>
+    <text> 我参与的 </text>
+    <image src='../../icon/icon_lishi.svg' style='width:44rpx;height:44rpx;' bindtap='stateClose'></image>
+  </view>
+
+  <scroll-view scroll-y class='scrollview'>
+    <view wx:if='{{list.length == 0}}' class='nodata'>暂无参与</view>
+    <view class='participation-content' wx:for='{{list}}' bindtap='topic' data-id='{{item.id}}'>
+      <view class='participation-content-state'><text>进行中</text></view>
+      <view class='participation-content-state-text'>
+        <text >{{item.name}}</text>
+        <text class='text1'>投票截止至 {{utils.formatTime(item.end_time)}}</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,77 @@
+<!--pages/CertificationImmediately.wxml-->
+<view class="page-CertificationImmediately">
+  <view class="list" style='background:#FAFAFA'>
+    <view class='text'>手机号码</view>
+    <input id="" class='right' value="{{phone}}" type="number"  placeholder="" placeholder-style="" placeholder-class="input-placeholder"
+      maxlength="11"  bindinput="" bindfocus="" bindblur="" bindconfirm="" disabled>
+    </input>
+  </view>
+  <view class="list">
+    <view class='text'>业主姓名</view>
+    <input id="" class='right' value="{{name}}" type="text"  placeholder="请输入您的姓名" placeholder-style="" placeholder-class="input-placeholder"
+       maxlength="10"  bindinput="nameval" bindfocus="" bindblur="" bindconfirm="">
+    </input>
+  </view>
+  <!-- 认证房号 -->
+  <view class="list">
+    <view class='text'>认证房号</view>
+    <input id="" class='right' value="{{room}}" type="text"  placeholder="请输入认证房号" placeholder-style="" placeholder-class="input-placeholder"
+       maxlength="10"  bindinput="roomval" bindfocus="" bindblur="" bindconfirm="">
+    </input>
+  </view>
+    <!-- <view class="rzfh" bindtap='selectroomshow'>
+      <text >认证房号</text>
+      <input value="{{roomarr[roomarrindex]?roomarr[roomarrindex].address:'请选择认证房号'}}" type="text"  placeholder="" placeholder-style="" placeholder-class="input-placeholder"
+         bindinput="" bindfocus="" bindblur="" bindconfirm="" disabled/>
+      <image class="" src="../../icon/icon_jiantou.svg" binderror="" bindload="" style="width:32rpx;height:32rpx">
+      </image>
+    </view> -->
+  <!-- 单元选择 -->
+  <!-- <picker bindchange="roomarr1change" value="{{roomarr1index}}" range="{{roomarr1}}" range-key='address'>
+  <view class="rzfh" >
+    <text ></text>
+    <input class="input2" value="{{roomarr1[roomarr1index].address?roomarr1[roomarr1index].address:'请选择认证房号'}}" type="text"  placeholder="" placeholder-style="" placeholder-class="input-placeholder" bindinput="" bindfocus="" bindblur="" bindconfirm="" disabled/>
+    <image class="" src="../../icon/icon_jiantou.svg" binderror="" bindload="" style="width:32rpx;height:32rpx">
+    </image>
+  </view>
+  </picker > -->
+  <view class="list">
+    <view class='text'>房屋面积</view>
+     <input id="" class='right' value="{{area}}" type="number"  placeholder="请输入您的房屋面积" placeholder-style="" placeholder-class="input-placeholder"
+       maxlength="10"  bindinput="areaval" bindfocus="" bindblur="" bindconfirm=""/>
+  </view>
+  <view class="list">
+    <view class='text'>身份证号</view>
+    <input id="" class='right' value="{{identity}}" type="text"  placeholder="选填" placeholder-style="" placeholder-class="input-placeholder"
+      bindinput="identityval" bindfocus="" bindblur="" bindconfirm=""/>
+  </view>
+  <view class="scclzm" >
+    <text >上传材料证明(上传身份证或房产证等有效证件,最多3张)</text>
+    <view class='tjtpbox'>
+      <view class="tjtp" wx:for="{{images}}" wx:key="{{index}}">
+        <image src='{{item}}' class='img'></image>
+        <image class='del' src='../../icon/del.svg' catchtap='delimg' data-index='{{index}}'>x</image>
+      </view>
+      <view class="tjtp">
+        <view class="djtjtp" bindtap='uploadpictures' >
+          <image class="" src="../../icon/icon_camera.svg"  style="width:72rpx;height:60rpx"/>
+          <text >添加照片</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <button class="tjxp" bindtap="submitVote">
+    提交审核
+  </button>
+</view>
+<view class='selectroom' hidden='{{roomboxshow}}' bindtap='selectroomshow'>
+  <view  class='roombox' catchtap='null'>
+    <view class='roomarrbox'>
+      <view wx:for='{{roomarr}}' wx:key='{{index}}' class='{{index === roomarrindex?"active room":"room"}}' catchtap='roomarrchange' data-index='{{index}}' >{{item.address}}</view>
+    </view>  
+    <view class='btn' catchtap='selectroomshow'>确定</view>
+  </view>
+</view>
+
+  
+

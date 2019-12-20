@@ -1,0 +1,29 @@
+<!--pages/selectionDetails/selectionDetails.wxml-->
+<view class='page-selectionDetails'> 
+  <!-- <view class='selectionDetails-img'>
+    <image src='' ></image>
+  </view> -->
+  <view class='selectionDetails-text'>
+    <text class='selectionDetails-text1' >评选对象信息：</text>
+    <!-- <text class='selectionDetails-text2' bindchange="changemassages" >适当提高物业管理费</text> -->
+  </view>
+
+  <view class='selectionDetails-messages'>
+    <!-- <view class='selectionDetails-messages-lf'>  
+      姓名： <text> {{msg.name}} </text>
+      出生年月： <text> {{msg.brondate}} </text>
+      文化程度： <text>{{msg.education}}</text>
+      序号： <text>{{msg.number}}</text>
+    </view>
+    <view class='selectionDetails-messages-rt'>
+      性别： <text> {{msg.sex}} </text>
+      职业： <text>{{msg.profession}}</text>
+      政治面貌： <text>{{msg.face}}</text>
+    </view> -->
+    <view class='half' wx:for='{{list}}'>
+      <view class='name'> {{item.name}}:</view>
+      <view class='val'>{{item.value}}</view>
+    </view>
+  </view>
+
+</view>

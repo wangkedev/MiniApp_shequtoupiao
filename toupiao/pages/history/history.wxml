@@ -1,0 +1,16 @@
+<!--pages/history/history.wxml-->
+<!-- 历史记录 -->
+<wxs module="utils" src="../../utils/utils.wxs"/>
+<scroll-view scroll-y class='scrollview'>
+  <view wx:if='{{list.length == 0}}' class='nodata'>暂无历史参与</view>
+   <view class='page-history' wx:for='{{list}}' bindtap='topic' data-id='{{item.id}}'>
+    <view class='participation-content'>
+      <view class='participation-content-state'><text>已结束</text></view>
+      <view class='participation-content-state-text'>
+        <text >{{item.name}}</text>
+        <text class='text1'>投票截止至 {{utils.formatTime(item.end_time)}}</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+

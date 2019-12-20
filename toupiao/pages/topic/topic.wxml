@@ -1,0 +1,103 @@
+<!--pages/topic/topic.wxml-->
+<wxs module="utils" src="../../utils/utils.wxs"/>
+<view class='page-topic'>
+    <view class='topic-img'>
+      <image src='{{image}}' style='width:100%;height:422rpx;background:black'></image>
+    </view>
+    <view class='topic-title'>
+      {{name}}
+    </view>
+    <view class='topic-detial'>
+      <view class='topic-detial-top'>
+        <text class='tpsj'>投票时间： <text class='topic-detial-date'>{{utils.formatTime(begin_time)}} 至 {{utils.formatTime(end_time)}}</text></text> 
+        
+        <text class='topic-detial-tpzt' wx:if='{{is_be==1}}'>进行中</text>
+        <text class='topic-detial-tpzt1' wx:else>已结束</text>
+      </view> 
+      <view class='topic-detial-bottom'>
+        发布单位：
+        <text class='topic-detial-bottom-fbdw'>{{hold}}</text>
+      </view>
+    </view>
+    <!-- tab切换 -->
+    <view class="swiper-tab">  
+      <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">投票</view>  
+      <view class="swiper-tab-list2 {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">图文详情</view>  
+    </view> 
+    <swiper style="min-height:300rpx" current="{{currentTab}}" class="swiper-box" duration="300" 
+    style="height:{{swiperheight}}px" 
+    bindchange="bindChange">  
+    <!-- <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="" bindchange="bindChange">   -->
+        <!-- 投票 -->  
+        <swiper-item id='swiperitem0'>  
+          <block wx:for='{{list}}'>
+            <view class='swiper-item'>
+              <text class='pldx'>{{item.name}}</text>  
+              <view class='qbzt-content' bindtap='allcheck' data-num='{{item.num}}' data-index='{{index}}'>
+                  <image src='../../icon/icon_agree.svg' class='check' wx:if='{{item.allcheck}}'></image>
+                  <image src='../../icon/icon_noagree.svg' class='check' wx:else></image>
+                <text class='qbzt'>全部赞同</text>
+              </view>
+            </view>
+            <view class='swiper-item-content' wx:for='{{item.ti}}' wx:for-item="item1" wx:for-index="index1">
+              <view class='swiper-item-content-xx'>
+                <text>{{index1+1}}.{{item1.theme}}</text> 
+                <view style='display:flex;align-items: center;' bindtap='gotoNavselectionDetails' data-s_id='{{item.id}}'
+                data-t_id='{{item1.id}}'>
+                  <text style="font-size: 24rpx;color: #999999;">详情</text> 
+                  <image src='../../icon/icon_jiantou.svg' style='width:32rpx;height:32rpx;'></image>
+                </view>
+              </view>
+              <view class='selecd-content'>
+                <view style='margin-right:5.3%' bindtap='check' data-l_index='{{index}}' data-t_index='{{index1}}' data-val='1'>
+                  <view style='display:flex;align-items: center;' >
+                    <image src='../../icon/icon_agree.svg' class='check' wx:if='{{item1.topic_incident_ti_res == 1}}'></image>
+                    <image src='../../icon/icon_noagree.svg' class='check' wx:else></image>
+                    <text>赞同</text> 
+                  </view>
+                </view>
+                <view style='margin-right:5.3%' bindtap='check' data-l_index='{{index}}' data-t_index='{{index1}}' data-val='2'>
+                  <view style='display:flex;align-items: center;'>
+                    <image src='../../icon/icon_agree.svg' class='check' wx:if='{{item1.topic_incident_ti_res == 2}}'></image>
+                    <image src='../../icon/icon_noagree.svg' class='check' wx:else></image>
+                    <text>反对</text> 
+                  </view>
+                </view>
+                <view style='margin-right:5.3%'bindtap='check' data-l_index='{{index}}' data-t_index='{{index1}}' data-val='3'> 
+                  <view style='display:flex;align-items: center;' >
+                    <image src='../../icon/icon_agree.svg' class='check' wx:if='{{item1.topic_incident_ti_res == 3}}'></image>
+                    <image src='../../icon/icon_noagree.svg' class='check' wx:else></image>
+                    <text>弃权</text> 
+                  </view>
+                </view>
+              </view>
+            </view>
+          </block>
+          <button class='botton' bindtap='btn' wx:if='{{is_be==1}}'> 提交选票</button> 
+        </swiper-item>  
+
+
+        <!-- 图文详情 -->  
+        <swiper-item id='swiperitem1'>  
+           <view style='margin:0 28rpx;'>
+            <!-- <text style='margin-bottom:20rpx;width:694rpx;height:440rpx;'>
+              物业管理费有两种，一种是包干制，就是算定一个标准后不管盈亏都由物业公司负责，一种是酬金制，有点像管家式管理，物业公司只收取一点比例的酬金，其他费用多少都由业主负担。一般情况下的物业管理费都是包干制。不同类型的房产的物业费的核算项目和要求也是不同的，一般经济适用房是政府指导价，可查看相关文件进行核算。商品房和别墅、商场、写字楼都要根据现实情况进行核算。不过有个基本的项目，可参照国家《物业服务收费管理办法》。
+            </text>
+            <image style='width:694rpx;height:388rpx;background:black'></image>
+            <text>
+                物业服务成本或者物业服务支出构成一般包括以下部分：
+              1、管理服务人员的工资、社会保险和按规定提取的福利费等;
+              2、物业共用部位、共用设施设备的日常运行、维护费用;
+              3、物业管理区域清洁卫生费用;
+              4、物业管理区域绿化养护费用;
+              5、物业管理区域秩序维护费用;
+              6、办公费用;
+              7、物业管理企业固定资产折旧;
+              8、物业共用部位、共用设施设备及公众责任保险费用;　　
+              9、经业主同意的其它费用。
+            </text> -->
+            <rich-text nodes='{{details}}'></rich-text>
+          </view>  
+        </swiper-item>  
+    </swiper> 
+</view>

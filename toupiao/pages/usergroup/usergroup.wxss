@@ -1,0 +1,244 @@
+/* pages/usergroup/usergroup.wxss */
+.scrollview{
+  height: calc(100vh - 500rpx);
+  overflow: hidden;
+}
+.page-usergroup{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.housemessage{
+  margin: 20rpx 28rpx 28rpx;
+  background: #FFFFFF;
+  box-shadow: 0 8rpx 24rpx 0 #EBEBEB;
+  border-radius: 12rpx;
+  width: 694rpx;
+  height: 280rpx;
+}
+.housemessage-fzxx{
+  display: flex;
+  align-items: center;
+  margin-left:3.7%;
+  margin-top: 3.6%;
+}
+.housemessage-fzxx text{
+  font-family: PingFang-SC-Bold;
+  font-size: 14px;
+  color: #333333;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 40rpx;
+  padding-left: 3.2%;
+}
+.housemessage-content{
+  margin: 3% 0 3% 12%;
+
+}
+.housemessage-content text{
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #999999;
+  letter-spacing: 0;
+  line-height: 40rpx;
+}
+.housemessage-content .housemessage-name,.housemessage-number,.housemessage-house{
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #151515;
+  letter-spacing: 0;
+  line-height: 40rpx;
+  margin-top: 3%;
+}
+.usergroup{
+  display: flex;
+  flex-direction: column;
+}
+.usergroup-content{
+  padding: 2.4% 3.7% 2.4% 3.7%;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #eeeeee;
+}
+.usergroup .usergroup-text{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin:3.8% 0 3.8% 3.7%;
+}
+.usergroup image{
+  margin-right: 3.7%
+}
+.usergroup-content image{
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 10rpx;
+}
+.usergroup-content-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.usergroup-content-top .usergroup-content-top-name{
+  display: flex;
+  align-items: center;
+}
+.usergroup-content-top .usergroup-content-top-name text{
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #333333;
+  letter-spacing: 0;
+  line-height: 40rpx;
+}
+.usergroup-content-top .usergroup-content-top-tc{
+  display: flex;
+  align-items: center;
+}
+.usergroup-content-top .usergroup-content-top-tc text{
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #333333;
+  letter-spacing: 0;
+  line-height: 40rpx;
+}
+.usergroup-content .usergroup-content-bottom{
+
+  margin: 1.5% 0 2.8% 0;
+}
+.usergroup-content .usergroup-content-bottom .usergroup-content-bottom-phone{
+  display: flex;
+  align-items: center;
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #333333;
+  letter-spacing: 0;
+  line-height: 40rpx;
+}
+
+/* 添加成员  */
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+
+.modal-dialog {
+  width: 518rpx;
+  height: 488rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 40%;
+  left: 0;
+  z-index: 9999;
+  background: #FFFFFF;
+  margin: -180rpx 105rpx;
+  border-radius: 36rpx;
+}
+
+.modal-title {
+  padding-top: 6%;
+  padding-bottom: 3%;
+  font-family: PingFang-SC-Bold;
+  font-size: 32rpx;
+  color: #333333;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.modal-dialog .ljrz{
+  width:358rpx;
+  height:88rpx;
+  border: 1rpx solid #3AB0FF;
+  border-radius: 4px;
+  background:#fff;
+}
+.modal-dialog .ljrz .ljrz-text{
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #3AB0FF;
+  letter-spacing: 0;
+  text-align: center;
+  height: 44rpx;
+  line-height: 44rpx;
+}
+
+.modal-title {
+  padding-top: 50rpx;
+  font-size: 36rpx;
+  color: #030303;
+  text-align: center;
+}
+
+.modal-content {
+  padding: 50rpx 32rpx;
+}
+
+.modal-input {
+  display: flex;
+  background: #fff;
+  border: 1rpx solid #CCCCCC;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+  width: 438rpx;
+  height: 88rpx;
+  margin:3% 5.5% 1.5% 5.5%;
+  margin-left:8%;
+}
+
+
+.input {
+  width: 438rpx;
+  height: 88rpx;
+  font-size: 28rpx;
+  line-height: 44rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  color: #030303;
+  text-align: center;
+}
+
+input-holder {
+  color: #BBBBBB;
+  font-size: 28rpx;
+}
+
+.modal-footer {
+  margin: 6% 5.3%;
+  display: flex;
+  flex-direction: row;
+  height: 88rpx;
+  font-size: 34rpx;
+  line-height: 88rpx;
+}
+
+.btn-cancel {
+  width: 208rpx;
+  height: 88rpx;
+  color:#999999;
+  text-align: center;
+  background: #EBEBEB;
+  border-radius: 8rpx;
+  margin-left: 3%;
+}
+
+.btn-confirm {
+  width: 208rpx;
+  height: 88rpx;
+  color: #FFFFFF;
+  text-align: center;
+  background: #3AB0FF;
+  border-radius: 8rpx;
+  margin-left: 6%;
+}
+.nodata{
+  padding-top: 200rpx;
+  text-align: center;
+  font-size: 40rpx;
+}

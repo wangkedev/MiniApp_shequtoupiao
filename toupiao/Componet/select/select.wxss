@@ -1,0 +1,62 @@
+/* Componet/select/select.wxss */
+.com-selectBox{
+    width:594rpx;
+    height:96rpx;
+
+}
+.com-sContent{
+    border: 1rpx solid #CCCCCC;
+    border-radius: 8rpx;
+    padding-left:30rpx; 
+    background: white;
+    font-size: 32rpx;
+    position: relative;
+    width:594rpx;
+    height:96rpx;
+    line-height: 96rpx;
+}
+.com-sImg{
+    position: absolute;
+    right: 30rpx;
+    top: 25rpx;
+    width: 32rpx;
+    height: 32rpx;
+    transition: all .3s ease;
+}
+.com-sTxt{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding:0 40rpx 0 rpx;
+    font-size: 30rpx;
+    color: #BBBBBB;
+    
+}
+.com-sList{
+    background: white;
+    position: absolute;
+    border: 1rpx solid #e2e2e2;
+    border-top: none;
+    box-sizing: border-box;
+    z-index: 3;
+    max-height: 240rpx;
+    overflow: auto;
+    width:624rpx;
+    overflow-x:hidden;
+}
+.com-sItem{
+    width:594rpx;
+    height:96rpx;
+    line-height: 96rpx;
+    border-top: 1rpx solid #e2e2e2;
+    padding: 0 12rpx;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 28rpx;
+    padding-left:30rpx; 
+}
+.com-sItem:first-child{
+    border-top: none;
+}
