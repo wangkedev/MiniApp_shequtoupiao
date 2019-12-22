@@ -13,10 +13,12 @@ function nologin(){
 
 
 function request(Type, url, params, successData, errorData, completeData) {
-  //设置默认数据传数格式
+  //设置默认数据传数格式 tpapi.yuanshixiong.cn
   var methonType = "application/json";
   //访问的主域名
-  var https ="https://www.goldneighbor.cn/"
+  // var https ="https://www.goldneighbor.cn/"
+  //测试 域名
+  var https ="https://tpapi.yuanshixiong.cn/"
   //判断请求方式
   if (Type === 'PUT') {
     var p = Object.keys(params).map(function (key) {
@@ -61,7 +63,9 @@ function request(Type, url, params, successData, errorData, completeData) {
 //导出模块
 module.exports = {
   request: request,
-  https:'https://toupiao.mumarenkj.com/',
+  // https:'https://toupiao.mumarenkj.com/',
+  //测试 域名
+  https : "https://tpapi.yuanshixiong.cn/",
   errortoast:(msg,time)=>{
     wx.showToast({
       title: msg,

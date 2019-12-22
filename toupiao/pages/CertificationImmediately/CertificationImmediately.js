@@ -207,11 +207,11 @@ Page({
         wx.showToast({
           title: res.msg,
           icon: 'success',
-          duration: 1000,
+          duration: 1500,
         })
         setTimeout(() => {
           wx.navigateBack()
-        }, 1000)
+        }, 1500)
       }else{
         config.errortoast(res.msg)
       }
