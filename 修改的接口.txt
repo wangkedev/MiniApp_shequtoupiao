@@ -1,0 +1,11 @@
+登门信息上传接口：
+/phone/Drop/do_edit
+变动内容：传参要变动一下，待对接
+
+确认投票接口：
+/phone/Homes/topic_sure
+变动内容：更新vote_type_his和vote_type表新字段，并且不会覆盖其他投票类型（登门投票和话务投票）
+
+会议列表接口：
+/ground/Topic/topic_list
+变动内容：未开启网络投票的议题不显示在小程序端
