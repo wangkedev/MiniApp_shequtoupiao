@@ -200,6 +200,8 @@
     		console.log('我上传了')
 			this.uploaddatashow = true;
 			let data = JSON.parse(localStorage.getItem('data')),arr = [];
+										   console.log('获取的getItemdata:',data);
+
     		for(let i = 0 ; i < data.length ; i++){
     			data[i].list.forEach((v,index)=>{
     				console.log(v)
@@ -208,13 +210,20 @@
     					arr.push(v)
     				}
     			})
-    		}
+			}
+							   console.log('获取的数据arr:',arr);
+
     		console.log('我走到这里了')
 			this.allupnum = arr.length;
 			this.up(arr)
     	},
     	up(data){
-    		this.axios.post('https://cstoupiao.sharexwd.top/phone/Drop/do_edit', {data:JSON.stringify(data[0])},{
+			// var dataStr = [1,2,3,4];
+				   console.log('获取的数据data:',data);
+    		// this.axios.post('https://cstoupiao.sharexwd.top/phone/Drop/do_edit', {data:JSON.stringify(data[0]),u_id:localStorage.getItem('id')},{
+    		this.axios.post('https://tpapi.yuanshixiong.cn/phone/Drop/do_edit', {data:JSON.stringify(data[1]),u_id:localStorage.getItem('id')},{
+    		// this.axios.post('https://tpapi.yuanshixiong.cn/phone/Drop/do_edit', {data:JSON.stringify(dataStr[0]),u_id:'110'},{
+    		// this.axios.post('https://tpapi.yuanshixiong.cn/phone/Drop/do_edit', {data:JSON.stringify(data[0])},{
 	          cancelToken: new this.axios.CancelToken((c)=> {
 	            this.source = c;
 	          })
@@ -245,11 +254,13 @@
     	updata(){
     		this.updatashow = true;
     		let that = this;
-			this.axios.post('https://cstoupiao.sharexwd.top/phone/Drop/h_index', {u_id:localStorage.getItem('id')},{
+			// this.axios.post('https://cstoupiao.sharexwd.top/phone/Drop/h_index', {u_id:localStorage.getItem('id')},{
+			this.axios.post('https://tpapi.yuanshixiong.cn/phone/Drop/h_index', {u_id:localStorage.getItem('id')},{
 	          cancelToken: new this.axios.CancelToken((c)=> {
 	            this.source = c;
 	          })
 	       	}).then((res) => {
+				   console.log('数据更新res:',res);
 				if(res.data.code==1){
 					localStorage.setItem('data',JSON.stringify(res.data.data));
 					//调用index页面 数据更新

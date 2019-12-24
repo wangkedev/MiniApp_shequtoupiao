@@ -1,6 +1,7 @@
 import axios from 'axios';
    axios.defaults.timeout = 0;
-axios.defaults.baseURL = 'https://cstoupiao.sharexwd.top/';
+// axios.defaults.baseURL = 'https://cstoupiao.sharexwd.top/';
+axios.defaults.baseURL = 'https://tpapi.yuanshixiong.cn/';
 import Toast from 'muse-ui-toast';
 
 //http request 拦截器
