@@ -200,9 +200,9 @@
     		console.log('我上传了')
 			this.uploaddatashow = true;
 			let data = JSON.parse(localStorage.getItem('data')),arr = [];
-										   console.log('获取的getItemdata:',data);
+			console.log('获取的getItemdata:',data);
 
-    		for(let i = 0 ; i < data.length ; i++){
+    		for(let i = 1 ; i < data.length ; i++){
     			data[i].list.forEach((v,index)=>{
     				console.log(v)
     				if(v.is_edit || v.vote_type!=0 || v.is_zu){
@@ -211,7 +211,7 @@
     				}
     			})
 			}
-							   console.log('获取的数据arr:',arr);
+			console.log('获取的数据arr:',arr);
 
     		console.log('我走到这里了')
 			this.allupnum = arr.length;
@@ -220,14 +220,23 @@
     	up(data){
 			// var dataStr = [1,2,3,4];
 				   console.log('获取的数据data:',data);
+				   var dataStr = JSON.stringify(data[0]);
+				   var u_idStr = localStorage.getItem('id');
+					var dataString = {
+						data:dataStr,
+						u_id:u_idStr
+					};
+
     		// this.axios.post('https://cstoupiao.sharexwd.top/phone/Drop/do_edit', {data:JSON.stringify(data[0]),u_id:localStorage.getItem('id')},{
-    		this.axios.post('https://tpapi.yuanshixiong.cn/phone/Drop/do_edit', {data:JSON.stringify(data[1]),u_id:localStorage.getItem('id')},{
+    		// this.axios.post('https://tpapi.yuanshixiong.cn/phone/Drop/do_edit', {data:dataString},{
     		// this.axios.post('https://tpapi.yuanshixiong.cn/phone/Drop/do_edit', {data:JSON.stringify(dataStr[0]),u_id:'110'},{
-    		// this.axios.post('https://tpapi.yuanshixiong.cn/phone/Drop/do_edit', {data:JSON.stringify(data[0])},{
+    		this.axios.post('https://tpapi.yuanshixiong.cn/phone/Drop/do_edit', {data:JSON.stringify(data[0])},{
 	          cancelToken: new this.axios.CancelToken((c)=> {
 	            this.source = c;
 	          })
 	       	}).then((res) => {
+				   				   console.log('数据上传res:',res);
+
 	       		data.splice(0,1);
 	       		if(data.length !=0){
 	       			setTimeout(()=>{
