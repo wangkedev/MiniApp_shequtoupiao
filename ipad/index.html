@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width,initial-scale = 1,maximum-scale = 1,minimum-scale = 1,user-scalable=no">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.css">
+  <title>ipad</title>
+  <!--<style type="text/css">
+    	@font-face {
+			  font-family: 'Material Icons';
+			  font-style: normal;
+			  font-weight: 400;
+			  src: url(MaterialIcons-Regular.eot); /* For IE6-8 */
+			  src: local('Material Icons'),
+			       local('MaterialIcons-Regular'),
+			       url(MaterialIcons-Regular.woff2) format('woff2'),
+			       url(MaterialIcons-Regular.woff) format('woff'),
+			       url(MaterialIcons-Regular.ttf) format('truetype');
+			}
+			
+			.material-icons {
+			  font-family: 'Material Icons';
+			  font-weight: normal;
+			  font-style: normal;
+			  font-size: 24px;  /* Preferred icon size */
+			  display: inline-block;
+			  line-height: 1;
+			  text-transform: none;
+			  letter-spacing: normal;
+			  word-wrap: normal;
+			  white-space: nowrap;
+			  direction: ltr;
+			
+			  /* Support for all WebKit browsers. */
+			  -webkit-font-smoothing: antialiased;
+			  /* Support for Safari and Chrome. */
+			  text-rendering: optimizeLegibility;
+			
+			  /* Support for Firefox. */
+			  -moz-osx-font-smoothing: grayscale;
+			
+			  /* Support for IE. */
+			  font-feature-settings: 'liga';
+			}
+		</style>-->
+  <script>
+    // index.html 
+    // 扩展API是否准备好，如果没有则监听“plusready"事件
+    if (window.plus) {
+      plusReady();
+      // alert(window.plus)
+    } else {
+      document.addEventListener("plusready", plusReady, false);
+    }
+    // 扩展API准备完成后要执行的操作
+    function plusReady() {
+      var ws = plus.webview.currentWebview(); //pw回车可输出plus.webview
+      // ... code
+      // alert('这是ready')
+      // alert(window.plus)
+    }
+
+  </script>
+</head>
+
+<body>
+  <div id="app"></div>
+</body>
+
+</html>
